@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import Box from './Box'
+import profile from './profile.json'
 
 function App() {
-  const [count, setCount] = useState(0)
   let imgsrc = `https://i.ibb.co/qJWcghq/ashiq.jpg`;
   let imgname = `Md Shoriful Islam Ashiq`;
   let imgaddress = `Rajashon, Savar, Dhaka - 1340`;
@@ -16,8 +16,6 @@ function App() {
   let imgtwitter = `https://twitter.com/mdsiaofficial`;
   let imginstagram = `https://www.instagram.com/mdsiaofficial/`;
   let imgyoutube = `https://www.youtube.com/mdsiaofficial`;
-
-  let imgInfo = [imgsrc, imgname, imgage, imgaddress, imgphone, imgemail, imggithub, imglinkedin, imgfacebook, imgtwitter, imginstagram, imgyoutube];
 
   let imginfo = {
     sorc: { imgsrc },
@@ -36,12 +34,12 @@ function App() {
 
   return (
     <>
-      {/* value passed by props one by one */}
-      <Box src={imgsrc} cardname={imgname} address={imgaddress} age={imgage} />
-      {/* value passed by props by array */}
-      {/* <Box src={imgInfo.imgsrc} cardname={imgInfo.imgname} address={imgInfo.imgaddress} age={imgInfo.imgage} /> */}
+      <Box src={imgsrc} Name={imgname} address={imgaddress} age={imgage} />
 
-      <Box Info={imginfo}/>
+
+      <Box src={profile.src} Name={profile.Name} address={profile.Address} age={profile.Age} />
+      
+
 
     </>
   )
